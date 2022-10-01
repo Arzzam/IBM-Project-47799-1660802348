@@ -1,0 +1,12 @@
+# PyCharm config files.
+.idea/
+
+# VSCode config files.
+.vscode/
+
+# Sqlite files.
+db.sqlite3
+
+# Python complied files.
+*__pycache__/
+*.py[cod]
