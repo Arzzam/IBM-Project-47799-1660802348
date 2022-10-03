@@ -7,7 +7,7 @@
             <label for="dob"
                    class="form-label">Age</label>
             <input type="date" class="form-control" name="dob"
-                   id="dob" required value="{{ dob }}">
+                   id="dob" required value="{{ dob }}" max="{{ today }}">
         </div>
         <div class="mt-3 text-center">
             <button type="submit" class="btn btn-primary">Calculate
@@ -15,9 +15,9 @@
             <a class="btn btn-primary" href="{{ url_for('index') }}">Home</a>
         </div>
     </form>
-    {% if age %}
+    {% if age is defined %}
         <div class="mt-3 mb-0 fs-5 text-center">
-        Your age: {{ age }}
+            Your age: {{ age }}
         </div>
     {% endif %}
 {% endblock %}

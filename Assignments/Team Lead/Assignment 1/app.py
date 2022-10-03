@@ -60,13 +60,17 @@ def avatar():
 
 @app.route('/age', methods=['GET', 'POST'])
 def age_calculator():
+    today = date.today()
+    today_str = today.strftime('%Y-%m-%d')
     if request.method == 'GET':
-        return render_template('age.html', dob='')
+        return render_template('age.html', dob='', today=today_str)
     elif request.method == 'POST':
         dob = request.form['dob']
-        age = relativedelta.relativedelta(date.today(),
+        age = relativedelta.relativedelta(today,
                                           parser.parse(dob)).years
-        return render_template('age.html', dob=dob, age=age)
+        if age < 0:
+            age = 0
+        return render_template('age.html', dob=dob, today=today_str, age=age)
 
 
 if __name__ == '__main__':
