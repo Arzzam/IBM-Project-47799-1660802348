@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import requests
 from email_validator import validate_email, EmailNotValidError
+import python_avatars as pa
 
 SITE_NAME = 'nk'
 app = Flask(__name__)
@@ -47,6 +48,12 @@ def check():
         except:
             status = False
         return render_template('check.html', site=site, status=status)
+
+
+@app.route('/avatar', methods=['GET'])
+def avatar():
+    avatar_img = pa.Avatar.random()
+    return render_template('avatar.html', avatar=avatar_img.render())
 
 
 if __name__ == '__main__':
