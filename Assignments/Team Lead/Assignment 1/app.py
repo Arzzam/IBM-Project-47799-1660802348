@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 import requests
 from email_validator import validate_email, EmailNotValidError
 import python_avatars as pa
+from dateutil import parser, relativedelta
+from datetime import date
 
 SITE_NAME = 'nk'
 app = Flask(__name__)
@@ -54,6 +56,17 @@ def check():
 def avatar():
     avatar_img = pa.Avatar.random()
     return render_template('avatar.html', avatar=avatar_img.render())
+
+
+@app.route('/age', methods=['GET', 'POST'])
+def age_calculator():
+    if request.method == 'GET':
+        return render_template('age.html', dob='')
+    elif request.method == 'POST':
+        dob = request.form['dob']
+        age = relativedelta.relativedelta(date.today(),
+                                          parser.parse(dob)).years
+        return render_template('age.html', dob=dob, age=age)
 
 
 if __name__ == '__main__':
