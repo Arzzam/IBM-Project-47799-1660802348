@@ -1,0 +1,25 @@
+body {
+    background: #2B2E4A;
+}
+
+table {
+    border-collapse: separate;
+    table-layout: auto;
+}
+
+tr > td:first-child {
+    white-space: nowrap;
+}
+
+tr > td:not(:first-child) {
+    word-break: break-word;
+}
+
+.container {
+    background: #3f5d89;
+    max-width: 30rem;
+}
+
+.top-pad {
+    height: 18vh;
+}

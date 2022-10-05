@@ -1,0 +1,12 @@
+{% extends 'card.html' %}
+{% block title %} Random Avatar Generator {% endblock %}
+{% block content %}
+    <h1 class="fs-3 mb-2 text-center">Random Avatar Generator</h1>
+    <div class="my-4 text-center">
+        {{ avatar|safe }}
+    </div>
+    <div class="mb-0 text-center">
+        <a class="btn btn-primary" href="{{ url_for('avatar') }}">Refresh</a>
+        <a class="btn btn-primary" href="{{ url_for('index') }}">Home</a>
+    </div>
+{% endblock %}
