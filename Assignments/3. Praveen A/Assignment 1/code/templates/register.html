@@ -1,0 +1,30 @@
+{% extends 'card.html' %}
+{% block title %} Register {% endblock %}
+{% block content %}
+    <h1 class="fs-3 mb-2 text-center">Register</h1>
+    <form method="post" action="{{ url_for('success') }}">
+        <div class="mb-2">
+            <label for="username"
+                   class="form-label">Username</label>
+            <input type="text" class="form-control" name="username"
+                   id="username" required>
+        </div>
+        <div class="mb-2">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email"
+                   id="email"
+                   required>
+        </div>
+        <div class="mb-2">
+            <label for="phno" class="form-label">Mobile
+                Number</label>
+            <input type="tel" class="form-control" name="phno"
+                   id="phno"
+                   required>
+        </div>
+        <div class="mt-3 text-center">
+            <button type="submit" class="btn btn-primary">Register
+            </button>
+        </div>
+    </form>
+{% endblock %}

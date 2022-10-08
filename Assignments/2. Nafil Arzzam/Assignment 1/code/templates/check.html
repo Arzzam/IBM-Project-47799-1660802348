@@ -1,0 +1,26 @@
+{% extends 'card.html' %}
+{% block title %} Site Status {% endblock %}
+{% block content %}
+    <h1 class="fs-3 mb-2 text-center">Site Status</h1>
+    <form method="post" novalidate>
+        <div class="mb-2">
+            <label for="site"
+                   class="form-label">Site (only sitename.domain)</label>
+            <input type="text" class="form-control" name="site"
+                   id="site" required value="{{ site }}">
+        </div>
+        <div class="mt-3 text-center">
+            <button type="submit" class="btn btn-primary">Check
+            </button>
+            <a class="btn btn-primary" href="{{ url_for('index') }}">Home</a>
+        </div>
+    </form>
+    <div class="mt-3 mb-0">
+        {% if status %}
+            <div class="fs-5 text-center">Working!</div>
+        {% elif status == false %}
+            <div class="fs-5 text-center">Not Working!</div>
+        {% endif %}
+    </div>
+
+{% endblock %}
