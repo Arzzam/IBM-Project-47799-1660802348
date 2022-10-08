@@ -5,7 +5,7 @@ import python_avatars as pa
 from dateutil import parser, relativedelta
 from datetime import date
 
-SITE_NAME = 'nk'
+SITE_NAME = 'Christober Raj'
 app = Flask(__name__)
 app.jinja_env.globals['SITE_NAME'] = SITE_NAME
 
