@@ -5,10 +5,13 @@
 .vscode/
 
 # Sqlite files.
-db.sqlite3
+*.sqlite3
 
 # Credential files.
 *.crt
+
+# Misc
+*.docx
 
 # Python complied files.
 *__pycache__/
