@@ -7,6 +7,9 @@
 # Sqlite files.
 db.sqlite3
 
+# Credential files.
+*.crt
+
 # Python complied files.
 *__pycache__/
 *.py[cod]
